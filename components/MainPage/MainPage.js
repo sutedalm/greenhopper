@@ -1,5 +1,5 @@
 import React from "react";
-import SearchFieldForm from "../searchFieldForm/SearchFieldForm";
+import SearchFieldForm from "../SearchFieldForm/SearchFieldForm";
 
 const MainPage = () => {
   return (
