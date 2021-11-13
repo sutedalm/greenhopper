@@ -1,5 +1,5 @@
 import Head from "next/head";
-import MainPage from "../components/mainPage/MainPage";
+import MainPage from "../components/MainPage/MainPage";
 import styles from "../styles/Home.module.css";
 import CardList from "../components/CardList/CardList";
 
