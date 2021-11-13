@@ -24,7 +24,11 @@ const CardList = () => {
   return (
     <div>
       <div className={styles.RecipeList__swiperContainer}>
-        <Swiper slidesPerView={"auto"} spaceBetween={3}>
+        <Swiper
+          slidesPerView={"auto"}
+          spaceBetween={3}
+          centerInsufficientSlides
+        >
           {cards.map(({ type, carbon_emission, link }) => (
             <SwiperSlide key={type} className={styles.swiperSlide}>
               <CardItem
