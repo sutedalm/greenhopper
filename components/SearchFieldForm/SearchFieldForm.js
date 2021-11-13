@@ -25,14 +25,22 @@ const SearchFieldForm = ({
               className={styles.SearchFieldForm__searchBarTextAreaContainerFrom}
             >
               <label>From</label>
-              <textarea placeholder="Enter a city name"></textarea>
+              <input
+                value={from}
+                placeholder="Enter a city name"
+                onChange={(e) => setFrom(e.target.value)}
+              />
             </div>
 
             <div
               className={styles.SearchFieldForm__searchBarTextAreaContainerTo}
             >
               <label>To</label>
-              <textarea placeholder="Enter a city name"></textarea>
+              <input
+                value={to}
+                placeholder="Enter a city name"
+                onChange={(e) => setTo(e.target.value)}
+              />
             </div>
 
             <div
@@ -41,9 +49,12 @@ const SearchFieldForm = ({
               }
             >
               <DatePicker
+                className={
+                  styles.SearchFieldForm__searchBarDateContainerDepartureDP
+                }
                 selected={departDate}
                 placeholderText="Departure Date"
-                //   onChange={(departDate) => setDepartDate(departDate)}
+                onChange={(e) => setDepartDate(e)}
                 dateFormat="dd/MM/yyyy"
               />
             </div>
@@ -52,15 +63,21 @@ const SearchFieldForm = ({
               className={styles.SearchFieldForm__searchBarDateContainerArrival}
             >
               <DatePicker
-                selected={departDate}
+                className={
+                  styles.SearchFieldForm__searchBarDateContainerArrivalDP
+                }
+                selected={returnDate}
                 placeholderText="Departure Date"
-                //   onChange={(departDate) => setDepartDate(departDate)}
+                onChange={(e) => setReturnDate(e)}
                 dateFormat="dd/MM/yyyy"
               />
             </div>
-
-            <div className={styles.SearchFieldForm__searchBarSearchButton}>
-              <button>Search travelling options</button>
+            <div
+              className={styles.SearchFieldForm__searchBarSearchButtonContainer}
+            >
+              <button className={styles.SearchFieldForm__searchBarSearchButton}>
+                Search travelling options
+              </button>
             </div>
           </div>
         </div>
