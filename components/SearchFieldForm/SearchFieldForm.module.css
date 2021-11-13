@@ -1,29 +1,33 @@
 .SearchFieldForm__header {
   font-weight: bold;
-  color: antiquewhite;
+  color: white;
   font-size: 5.5em;
-  margin-left: 1em;
+  margin-left: 0.1em;
+  padding-top: 1em;
 }
 
 .SearchFieldForm__container {
-  background-image: url("../../public/travel_img1.jpg");
+  background-image: url("../../public/travel_img2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   height: 25em;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
 }
 
 .SearchFieldForm__searchBar {
   background-color: #02122c;
-  width: auto;
-  height: auto;
+  width: fit-content;
+  height: fit-content;
   padding-bottom: 2em;
+  padding-right: 1em;
+  padding-left: 1em;
+  margin-left: 1em;
 }
 
 .SearchFieldForm__searchBarContainer {
   padding-top: 1.2em;
   display: flex;
-  padding-left: 7em;
 }
 
 .SearchFieldForm__searchBarTextAreaContainerFrom {
@@ -54,9 +58,13 @@
   color: antiquewhite;
 }
 
+.SearchFieldForm__searchBarDateContainerDeparture > label {
+  display: block;
+  color: antiquewhite;
+}
+
 .SearchFieldForm__searchBarDateContainerDeparture {
   margin-left: 0.4em;
-  padding-top: 1.2em;
 }
 
 .SearchFieldForm__searchBarDateContainerDepartureDP {
@@ -65,9 +73,13 @@
   height: 3em;
 }
 
+.SearchFieldForm__searchBarDateContainerArrival > label {
+  display: block;
+  color: antiquewhite;
+}
+
 .SearchFieldForm__searchBarDateContainerArrival {
   margin-left: 0.4em;
-  padding-top: 1.2em;
 }
 
 .SearchFieldForm__searchBarDateContainerArrivalDP {
@@ -91,4 +103,11 @@
 .SearchFieldForm__searchBarSearchButtonContainer {
   padding-top: 1.2em;
   margin-left: 5em;
+}
+
+.SearchFieldForm__footer {
+  font-weight: bold;
+  color: white;
+  padding-top: 1em;
+  margin-left: 1.2em;
 }

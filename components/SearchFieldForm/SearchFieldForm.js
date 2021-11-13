@@ -48,6 +48,7 @@ const SearchFieldForm = ({
                 styles.SearchFieldForm__searchBarDateContainerDeparture
               }
             >
+              <label>Depart</label>
               <DatePicker
                 className={
                   styles.SearchFieldForm__searchBarDateContainerDepartureDP
@@ -62,6 +63,7 @@ const SearchFieldForm = ({
             <div
               className={styles.SearchFieldForm__searchBarDateContainerArrival}
             >
+              <label>Return</label>
               <DatePicker
                 className={
                   styles.SearchFieldForm__searchBarDateContainerArrivalDP
@@ -80,6 +82,10 @@ const SearchFieldForm = ({
               </button>
             </div>
           </div>
+        </div>
+        <div className={styles.SearchFieldForm__footer}>
+          Check the CO2-emission you would impact by using a specific
+          transportation method!
         </div>
       </div>
     </>
