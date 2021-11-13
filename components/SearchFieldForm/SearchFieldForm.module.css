@@ -1,0 +1,53 @@
+.SearchFieldForm__header {
+  font-weight: bold;
+  color: antiquewhite;
+  font-size: 5.5em;
+  margin-left: 1em;
+}
+
+.SearchFieldForm__container {
+  background-image: url("../../public/travel_img1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 30em;
+}
+
+.SearchFieldForm__searchBar {
+  background-color: #02122c;
+  width: auto;
+  height: 6em;
+}
+
+.SearchFieldForm__searchBarContainer {
+  padding-top: 1.2em;
+  display: flex;
+}
+
+.SearchFieldForm__searchBarTextAreaContainerFrom > textarea {
+  resize: none;
+  width: fit-content;
+  height: 3em;
+  font-size: 1em;
+  margin-left: 0.4em;
+}
+
+.SearchFieldForm__searchBarTextAreaContainerFrom > label {
+  color: antiquewhite;
+  display: block;
+  font: bold;
+}
+
+.SearchFieldForm__searchBarTextAreaContainerTo > textarea {
+  resize: none;
+  width: fit-content;
+  height: 3em;
+  font-size: 1em;
+  margin-left: 0.4em;
+}
+
+.SearchFieldForm__searchBarTextAreaContainerTo > label {
+  display: block;
+  color: antiquewhite;
+  font: bold;
+}
