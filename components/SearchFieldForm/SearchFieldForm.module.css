@@ -10,18 +10,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 30em;
+  height: 25em;
 }
 
 .SearchFieldForm__searchBar {
   background-color: #02122c;
   width: auto;
-  height: 6em;
+  height: 7.5em;
 }
 
 .SearchFieldForm__searchBarContainer {
   padding-top: 1.2em;
   display: flex;
+  padding-left: 7em;
 }
 
 .SearchFieldForm__searchBarTextAreaContainerFrom > textarea {
@@ -50,4 +51,20 @@
   display: block;
   color: antiquewhite;
   font: bold;
+}
+
+.SearchFieldForm__searchBarDateContainerDeparture {
+  margin-left: 0.4em;
+}
+
+.SearchFieldForm__searchBarDateContainerArrival {
+  margin-left: 0.4em;
+}
+
+.SearchFieldForm__searchBarSearchButton {
+  font: bold;
+  width: fit-content;
+  height: 3em;
+  font-size: 1em;
+  margin-left: 0.4em;
 }
