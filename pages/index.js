@@ -1,7 +1,7 @@
 import Head from "next/head";
 import MainPage from "../components/mainPage/MainPage";
 import styles from "../styles/Home.module.css";
-import CardList from "./components/CardList/CardList";
+import CardList from "../components/CardList/CardList";
 
 export default function Home() {
   return (
