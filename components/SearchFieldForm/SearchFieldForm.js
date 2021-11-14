@@ -13,6 +13,7 @@ const SearchFieldForm = ({
   setReturnDate,
   setFrom,
   setTo,
+  onClick,
 }) => {
   return (
     <>
@@ -77,7 +78,10 @@ const SearchFieldForm = ({
             <div
               className={styles.SearchFieldForm__searchBarSearchButtonContainer}
             >
-              <button className={styles.SearchFieldForm__searchBarSearchButton}>
+              <button
+                className={styles.SearchFieldForm__searchBarSearchButton}
+                onClick={onClick}
+              >
                 Search travelling options
               </button>
             </div>

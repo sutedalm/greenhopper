@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import SearchFieldForm from "../SearchFieldForm/SearchFieldForm";
+import TravelCardList from "/components/travelItems/TravelCardList/TravelCardList";
 
 const MainPage = () => {
   const [to, setTo] = useState("");
   const [from, setFrom] = useState("");
   const [departDate, setDepartDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
+  const [showTravelCardList, setShowTravelCardList] = useState(false);
+
+  const onClick = () => {
+    setShowTravelCardList(true);
+  };
 
   return (
     <div>
@@ -18,7 +24,9 @@ const MainPage = () => {
         setReturnDate={setReturnDate}
         setFrom={setFrom}
         setTo={setTo}
+        onClick={onClick}
       />
+      {showTravelCardList && <TravelCardList />}
     </div>
   );
 };
