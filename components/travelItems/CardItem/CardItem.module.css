@@ -49,9 +49,17 @@
   line-height: 64px;
   text-align: center;
   height: 100%;
-  display: inline-block;
+  /* display: inline-block; */
 }
 .CardItem__duration {
-  padding-left: 2em;
+  padding-left: 1em;
   font-family: "Quicksand", sans-serif;
+}
+
+.CardItem__textContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: left;
+  width: 60%;
 }

@@ -36,15 +36,15 @@ const CardItem = ({
         </div>
 
         <div className={styles.CardItem__textContainer}>
-          <span className={styles.CardItem__text}>
+          <div className={styles.CardItem__text}>
             <img src="/clock.png" alt="Time:" width="15" height="15" />
             {toHoursMinutes(startDate)} - {toHoursMinutes(endDate)}
-          </span>
-          <span className={styles.CardItem__text}>
+          </div>
+          <div className={styles.CardItem__text}>
             <img src="/time-left.png" alt="Time:" width="15" height="15" />{" "}
             {duration}h
-          </span>
-          <span className={styles.CardItem__text}>{price}€</span>
+          </div>
+          <div className={styles.CardItem__text}>{price}€</div>
         </div>
       </div>
     </a>
