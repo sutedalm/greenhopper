@@ -1,5 +1,4 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./TravelCardList.module.css";
 
 import CardItem from "../CardItem/CardItem";
@@ -64,7 +63,7 @@ const TravelCardList = ({ from, to, startDate, endDate, co2_cards }) => {
           FLIGHTS
         </h1>
         <hr className={styles.travelCardListContainer__headingLine} />
-        <Swiper slidesPerView={"auto"} spaceBetween={3} direction="vertical">
+        <div className={styles.travelCardListContainer__listContainer}>
           {cards.map(
             ({
               type,
@@ -75,7 +74,7 @@ const TravelCardList = ({ from, to, startDate, endDate, co2_cards }) => {
               endDate,
               duration,
             }) => (
-              <SwiperSlide key={type} className={styles.swiperSlide}>
+              <div key={type} className={styles.swiperSlide}>
                 <CardItem
                   type={type}
                   carbon_emission={carbon_emission}
@@ -87,10 +86,10 @@ const TravelCardList = ({ from, to, startDate, endDate, co2_cards }) => {
                   price={price}
                   duration={duration}
                 />
-              </SwiperSlide>
+              </div>
             )
           )}
-        </Swiper>
+        </div>
       </div>
     </div>
   );
