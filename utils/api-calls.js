@@ -12,13 +12,13 @@ export async function api_call(from, to) {
     console.log("Distance: ")
     console.log(dist)
     // Car
-    let car_card = await get_car_route(from, to);
+    let car_card = await get_car_card(from, to, dist);
     //// Bus
     //let bus_card = await get_bus_route(from, to);
     // Train
-    let train_card = await get_train_route(from, to);
+    let train_card = await get_train_card(from, to, dist);
     // Flight
-    let flight_card = await get_flight_route(from, to);
+    let flight_card = await get_flight_card(from, to, dist);
     
     // We use string input in from and to
     let cards = [
@@ -72,23 +72,17 @@ async function get_dist(url) {
     return [ret_lat, ret_long];
 }
 
-async function get_car_route( from, to ) {
+async function get_car_card( from, to, dist) {
+    let carbon_footprint = (dist/100) * 8.42; // Referenced from https://co2.myclimate.org/en/car_calculators/new
+    // Assumption is that the car is mid-range and we use Ethanol (E10)
     return {
             "type": "car",
-            "carbon_emission": 5,
-            "link": "https://www.google.com/",
+            "carbon_emission": carbon_footprint,
+            "link": "https://www.blablacar.de/",
         };
 }
 
-//async function get_bus_route( from, to ) {
-//    return {
-//            "type": "bus",
-//            "carbon_emission": 3,
-//            "link": "https://www.google.com/",
-//        };
-//}
-
-async function get_train_route( from, to ) {
+async function get_train_card( from, to, dist) {
     return {
             "type": "train",
             "carbon_emission": 9,
@@ -96,7 +90,7 @@ async function get_train_route( from, to ) {
         };
 }
 
-async function get_flight_route( from, to ) {
+async function get_flight_card( from, to, dist) {
     let cb_url = "https://co2.myclimate.org/en/flight_calculators";
 
     return {
