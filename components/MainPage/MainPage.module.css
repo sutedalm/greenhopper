@@ -1,0 +1,12 @@
+.backgroundImage {
+  background-image: url("../../public/travel_img2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: -999;
+}
