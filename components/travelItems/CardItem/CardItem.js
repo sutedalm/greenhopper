@@ -20,10 +20,9 @@ const CardItem = ({
   to,
   startDate,
   endDate,
-  price
+  price,
+  duration,
 }) => {
-  const duration = msToTime(endDate - startDate);
-
   const toHoursMinutes = (date) => `${date.getHours()}:${date.getHours()}`;
 
   const photo_url = "/cardIllustrations/airport.svg";
