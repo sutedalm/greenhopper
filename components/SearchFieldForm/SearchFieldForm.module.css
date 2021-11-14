@@ -75,6 +75,16 @@
   margin-top: 1.2em;
 }
 
+.SearchFieldForm__searchBarSearchButton:hover {
+  background-color: #3e8e41;
+}
+
+.SearchFieldForm__searchBarSearchButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .SearchFieldForm__footer {
   font-weight: bold;
   color: white;
