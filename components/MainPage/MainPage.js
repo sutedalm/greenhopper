@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SearchFieldForm from "../SearchFieldForm/SearchFieldForm";
 import TravelCardList from "/components/travelItems/TravelCardList/TravelCardList";
 
+import styles from "./MainPage.module.css";
+
 const MainPage = () => {
   const [to, setTo] = useState("");
   const [from, setFrom] = useState("");
@@ -14,7 +16,8 @@ const MainPage = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
+      <div className={styles.backgroundImage}></div>
       <SearchFieldForm
         from={from}
         to={to}
