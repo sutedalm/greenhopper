@@ -34,6 +34,10 @@ export async function api_call(from, to) {
     return cards;
 }
 
+function calc_duration(kmh, dist_km) {
+    return dist_km / kmh;
+}
+
 function distance(lat1, lon1, lat2, lon2) {
     var unit = "K";
 	if ((lat1 == lat2) && (lon1 == lon2)) {
@@ -75,10 +79,13 @@ async function get_dist(url) {
 async function get_car_card( from, to, dist) {
     let carbon_footprint = (dist/100) * 8.42 * 0.4; // Referenced from https://co2.myclimate.org/en/car_calculators/new
     // Assumption is that the car is mid-range and we use Ethanol (E10)
+
+    // For average car speed, we'll just assume 80 kmh
     return {
             "type": TRANSPORTATION_TYPES.CAR,
             "carbon_emission": carbon_footprint,
             "link": "https://www.blablacar.de/",
+            "duration": calc_duration(dist, 80.0), 
         };
 }
 
@@ -86,10 +93,13 @@ async function get_train_card( from, to, dist) {
     let carbon_footprint = dist * 0.000006; // Referenced from https://www.worldlandtrust.org/carbon-calculator/individual/transport/transport-calculator/
     // Assumption is that it is an international travel and one passenger
 
+    // For average train speed, we'll just assume 100 kmh
+    // https://www.quora.com/What-is-the-average-speed-of-trains?share=1
     return {
             "type": TRANSPORTATION_TYPES.TRAIN,
             "carbon_emission": carbon_footprint,
             "link": "https://www.bahn.com/",
+            "duration": calc_duration(dist, 100.0), 
         };
 }
 
@@ -98,7 +108,8 @@ async function get_flight_card( from, to, dist) {
 
     return {
             "type": TRANSPORTATION_TYPES.FLIGHT,
-            "carbon_emission": 8,
+            "carbon_emission": carbon_footprint,
             "link": "https://www.lufthansa.com/us/en/homepage",
+            "duration": calc_duration(dist, 804.5), 
         };
 }
