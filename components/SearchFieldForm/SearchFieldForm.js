@@ -22,9 +22,7 @@ const SearchFieldForm = ({
 
         <div className={styles.SearchFieldForm__searchBar}>
           <div className={styles.SearchFieldForm__searchBarContainer}>
-            <div
-              className={styles.SearchFieldForm__searchBarTextAreaContainerFrom}
-            >
+            <div className={styles.SearchFieldForm__searchBarTextAreaContainer}>
               <label>From</label>
               <input
                 value={from}
@@ -33,9 +31,7 @@ const SearchFieldForm = ({
               />
             </div>
 
-            <div
-              className={styles.SearchFieldForm__searchBarTextAreaContainerTo}
-            >
+            <div className={styles.SearchFieldForm__searchBarTextAreaContainer}>
               <label>To</label>
               <input
                 value={to}
@@ -75,16 +71,12 @@ const SearchFieldForm = ({
                 dateFormat="dd/MM/yyyy"
               />
             </div>
-            <div
-              className={styles.SearchFieldForm__searchBarSearchButtonContainer}
+            <button
+              className={styles.SearchFieldForm__searchBarSearchButton}
+              onClick={onClick}
             >
-              <button
-                className={styles.SearchFieldForm__searchBarSearchButton}
-                onClick={onClick}
-              >
-                Search travelling options
-              </button>
-            </div>
+              Search travelling options
+            </button>
           </div>
         </div>
         <div className={styles.SearchFieldForm__footer}>

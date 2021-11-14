@@ -3,24 +3,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./CardList.module.css";
 
 import CardItem from "../CardItem/CardItem";
-const CardList = () => {
-  const cards = [
-    {
-      type: "Flight",
-      carbon_emission: 300,
-      link: "https://www.google.com/",
-    },
-    {
-      type: "Train",
-      carbon_emission: 80,
-      link: "https://www.google.com/",
-    },
-    {
-      type: "Car",
-      carbon_emission: 150,
-      link: "https://www.google.com/",
-    },
-  ];
+const CardList = ({co2_cards}) => {
+  //const cards = [
+  //  {
+  //    type: "Airplane Travel",
+  //    carbon_emission: 300,
+  //    link: "https://www.google.com/",
+  //  },
+  //  {
+  //    type: "Train Travel",
+  //    carbon_emission: 80,
+  //    link: "https://www.google.com/",
+  //  },
+  //  {
+  //    type: "Car Travel",
+  //    carbon_emission: 150,
+  //    link: "https://www.google.com/",
+  //  },
+  //];
+  console.log(co2_cards);
 
   const emissionToColor = (emission) => {
     if (emission > 200) return "red";
@@ -36,12 +37,13 @@ const CardList = () => {
           spaceBetween={3}
           centerInsufficientSlides
         >
-          {cards.map(({ type, carbon_emission, link }) => (
+          {co2_cards.map(({ type, carbon_emission, link, distance }) => (
             <SwiperSlide key={type} className={styles.swiperSlide}>
               <CardItem
                 type={type}
                 carbon_emission={carbon_emission}
                 link={link}
+                distance={distance}
               />
             </SwiperSlide>
           ))}

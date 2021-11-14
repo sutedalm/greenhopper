@@ -4,7 +4,7 @@ import styles from "./TravelCardList.module.css";
 
 import CardItem from "../CardItem/CardItem";
 import CardList from "../../co2Comparison/CardList/CardList";
-const TravelCardList = ({ from, to, startDate, endDate }) => {
+const TravelCardList = ({ from, to, startDate, endDate, co2_cards }) => {
   const cards = [
     {
       type: "Flight",
@@ -26,7 +26,7 @@ const TravelCardList = ({ from, to, startDate, endDate }) => {
     <div className={styles.container}>
       <div className={styles.fade}></div>
       <div className={styles.co2CardListContainer}>
-        <CardList />
+        <CardList co2_cards={co2_cards}/>
       </div>
       <div className={styles.travelCardListContainer}>
         <h1 className={styles.travelCardListContainer__flightsHeadig}>

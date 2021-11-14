@@ -11,8 +11,7 @@ export async function api_call(from, to) {
     let to_dist = await get_dist(to_dist_url);
     let dist = distance(from_dist[0], from_dist[1], to_dist[0], to_dist[1]); // To simplify matters, we utilize air distance
 
-    console.log("Distance: ")
-    console.log(dist)
+    console.log("Distance: " + dist)
     // Car
     let car_card = await get_car_card(from, to, dist);
     // Train
@@ -83,23 +82,25 @@ async function get_car_card( from, to, dist) {
     // For average car speed, we'll just assume 80 kmh
     return {
             "type": TRANSPORTATION_TYPES.CAR,
-            "carbon_emission": carbon_footprint,
+            "carbon_emission": carbon_footprint.toFixed(2),
             "link": "https://www.blablacar.de/",
             "duration": calc_duration(dist, 80.0), 
+            "distance": dist.toFixed(2),
         };
 }
 
 async function get_train_card( from, to, dist) {
-    let carbon_footprint = dist * 0.000006; // Referenced from https://www.worldlandtrust.org/carbon-calculator/individual/transport/transport-calculator/
+    let carbon_footprint = dist * 0.006; // Referenced from https://www.worldlandtrust.org/carbon-calculator/individual/transport/transport-calculator/
     // Assumption is that it is an international travel and one passenger
 
     // For average train speed, we'll just assume 100 kmh
     // https://www.quora.com/What-is-the-average-speed-of-trains?share=1
     return {
             "type": TRANSPORTATION_TYPES.TRAIN,
-            "carbon_emission": carbon_footprint,
+            "carbon_emission": carbon_footprint.toFixed(2),
             "link": "https://www.bahn.com/",
             "duration": calc_duration(dist, 100.0), 
+            "distance": dist.toFixed(2),
         };
 }
 
@@ -108,8 +109,9 @@ async function get_flight_card( from, to, dist) {
 
     return {
             "type": TRANSPORTATION_TYPES.FLIGHT,
-            "carbon_emission": carbon_footprint,
+            "carbon_emission": carbon_footprint.toFixed(2),
             "link": "https://www.lufthansa.com/us/en/homepage",
             "duration": calc_duration(dist, 804.5), 
+            "distance": dist.toFixed(2),
         };
 }
