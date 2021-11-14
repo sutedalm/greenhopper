@@ -2,9 +2,9 @@ import React from "react";
 import { TRANSPORTATION_ILLUSTRATIONS } from "../../../utils/constants";
 import styles from "./CardItem.module.css";
 
-const CardItem = ({ link, type, carbon_emission }) => {
+const CardItem = ({ link, type, carbon_emission, distance }) => {
   const photo_url = TRANSPORTATION_ILLUSTRATIONS[type];
-  const distance = 100;
+  //const distance = 100;
   return (
     <a href={link} target="_blank" rel="noreferrer noopener">
       <div className={styles.CardItem__container}>

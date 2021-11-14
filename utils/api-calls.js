@@ -85,6 +85,7 @@ async function get_car_card( from, to, dist) {
             "carbon_emission": carbon_footprint.toFixed(2),
             "link": "https://www.blablacar.de/",
             "duration": calc_duration(dist, 80.0), 
+            "distance": dist.toFixed(2),
         };
 }
 
@@ -99,6 +100,7 @@ async function get_train_card( from, to, dist) {
             "carbon_emission": carbon_footprint.toFixed(2),
             "link": "https://www.bahn.com/",
             "duration": calc_duration(dist, 100.0), 
+            "distance": dist.toFixed(2),
         };
 }
 
@@ -110,5 +112,6 @@ async function get_flight_card( from, to, dist) {
             "carbon_emission": carbon_footprint.toFixed(2),
             "link": "https://www.lufthansa.com/us/en/homepage",
             "duration": calc_duration(dist, 804.5), 
+            "distance": dist.toFixed(2),
         };
 }

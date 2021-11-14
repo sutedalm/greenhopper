@@ -37,12 +37,13 @@ const CardList = ({co2_cards}) => {
           spaceBetween={3}
           centerInsufficientSlides
         >
-          {co2_cards.map(({ type, carbon_emission, link }) => (
+          {co2_cards.map(({ type, carbon_emission, link, distance }) => (
             <SwiperSlide key={type} className={styles.swiperSlide}>
               <CardItem
                 type={type}
                 carbon_emission={carbon_emission}
                 link={link}
+                distance={distance}
               />
             </SwiperSlide>
           ))}
