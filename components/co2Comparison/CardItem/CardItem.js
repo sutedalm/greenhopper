@@ -11,7 +11,7 @@ const CardItem = ({ link, type, carbon_emission, distance, hours, minutes }) => 
         <div className={styles.CardItem__header}>
           <h1 className={styles.CardItem__name}>{type}</h1>
           <p className={styles.CardItem__carbonEmission}>
-            {carbon_emission}kg of CO2 with {hours}h{minutes}m travel time
+            <b>{carbon_emission}kg</b> of CO2 with {hours}h{minutes}m travel time
           </p>
           <hr className={styles.CardItem__line} />
         </div>

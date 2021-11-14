@@ -20,9 +20,9 @@ const CardItem = ({
   to,
   startDate,
   endDate,
+  price
 }) => {
   const duration = msToTime(endDate - startDate);
-  const price = 69;
 
   const toHoursMinutes = (date) => `${date.getHours()}:${date.getHours()}`;
 
@@ -37,7 +37,6 @@ const CardItem = ({
         </div>
         <div className={styles.CardItem__time}>
           {toHoursMinutes(startDate)} - {toHoursMinutes(endDate)}
-          {price}€{"     "}
         </div>
         <div className={styles.CardItem__time}>{duration} Hours</div>
         <div className={styles.CardItem__time}>{price}€</div>

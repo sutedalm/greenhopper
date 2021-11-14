@@ -8,17 +8,20 @@ const TravelCardList = ({ from, to, startDate, endDate, co2_cards }) => {
   const cards = [
     {
       type: "Flight",
-      carbon_emission: "10",
+      carbon_emission: 72,
+      price: 44,
       link: "https://www.google.com/",
     },
     {
       type: "Train",
-      carbon_emission: 10,
+      carbon_emission: 89,
+      price: 100,
       link: "https://www.google.com/",
     },
     {
       type: "Car",
-      carbon_emission: 10,
+      carbon_emission: 104,
+      price: 75,
       link: "https://www.google.com/",
     },
   ];
@@ -34,7 +37,7 @@ const TravelCardList = ({ from, to, startDate, endDate, co2_cards }) => {
         </h1>
         <hr className={styles.travelCardListContainer__headingLine} />
         <Swiper slidesPerView={"auto"} spaceBetween={3} direction="vertical">
-          {cards.map(({ type, carbon_emission, link }) => (
+          {cards.map(({ type, carbon_emission, link, price }) => (
             <SwiperSlide key={type} className={styles.swiperSlide}>
               <CardItem
                 type={type}
@@ -44,6 +47,7 @@ const TravelCardList = ({ from, to, startDate, endDate, co2_cards }) => {
                 to={to}
                 startDate={startDate}
                 endDate={endDate}
+                price={price}
               />
             </SwiperSlide>
           ))}
