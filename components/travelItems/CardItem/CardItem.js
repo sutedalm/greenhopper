@@ -12,13 +12,21 @@ function msToTime(duration) {
   return hours + ":" + minutes;
 }
 
-const CardItem = ({ link, type, carbon_emission }) => {
-  const startDate = new Date("November 15, 2021 18:00:00");
-  const endDate = new Date("November 15, 2021 22:00:00");
+const CardItem = ({
+  link,
+  type,
+  carbon_emission,
+  from,
+  to,
+  startDate,
+  endDate,
+}) => {
   const duration = msToTime(endDate - startDate);
   const price = 69;
 
   const toHoursMinutes = (date) => `${date.getHours()}:${date.getHours()}`;
+  console.log("startDate", startDate);
+  console.log("endDate", endDate);
 
   const photo_url = "/cardIllustrations/airport.svg";
   return (

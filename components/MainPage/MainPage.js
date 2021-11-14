@@ -7,9 +7,13 @@ import styles from "./MainPage.module.css";
 const MainPage = () => {
   const [to, setTo] = useState("");
   const [from, setFrom] = useState("");
-  const [departDate, setDepartDate] = useState("");
-  const [returnDate, setReturnDate] = useState("");
+  const [departDate, setDepartDate] = useState(new Date());
+  const [returnDate, setReturnDate] = useState(new Date());
   const [showTravelCardList, setShowTravelCardList] = useState(false);
+
+  console.log("in mainpage");
+  console.log("startDate", departDate);
+  console.log("endDate", returnDate);
 
   const onClick = () => {
     setShowTravelCardList(true);
@@ -29,7 +33,14 @@ const MainPage = () => {
         setTo={setTo}
         onClick={onClick}
       />
-      {showTravelCardList && <TravelCardList />}
+      {showTravelCardList && (
+        <TravelCardList
+          to={to}
+          from={from}
+          startDate={departDate}
+          endDate={returnDate}
+        />
+      )}
     </div>
   );
 };
