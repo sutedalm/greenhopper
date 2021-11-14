@@ -16,9 +16,10 @@
 
 .CardItem__name {
   margin-top: 10px;
-  text-align: center;
   margin: 0;
   font-size: larger;
+  color: #873e23;
+  font-family: "Quicksand", sans-serif;
 }
 
 .CardItem__photoURL {
@@ -45,6 +46,12 @@
 }
 
 .CardItem__carbonEmission {
-  text-align: center;
-  padding-bottom: 1em;
+  /* padding-bottom: 1em; */
+  font-family: "Quicksand", sans-serif;
+  margin-top: 0.4em;
+  font-size: small;
+}
+
+.CardItem__line {
+  opacity: 40%;
 }

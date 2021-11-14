@@ -10,13 +10,14 @@ const CardItem = ({ link, type, carbon_emission }) => {
       <div className={styles.CardItem__container}>
         <div className={styles.CardItem__header}>
           <h1 className={styles.CardItem__name}>{type}</h1>
+          <p className={styles.CardItem__carbonEmission}>
+            {carbon_emission}kg of CO2 for {distance} km
+          </p>
+          <hr className={styles.CardItem__line} />
         </div>
         <div className={styles.CardItem__imageContainer}>
           <img src={photo_url} className={styles.CardItem__photoURL} />
         </div>
-        <p className={styles.CardItem__carbonEmission}>
-          The caron emission for {distance} km would be {carbon_emission}kg
-        </p>
       </div>
     </a>
   );

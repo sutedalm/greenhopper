@@ -29,3 +29,15 @@
 .travelCardListContainer {
   background-color: black;
 }
+
+.travelCardListContainer__flightsHeadig {
+  color: white;
+  font-size: 2em;
+  margin-left: 1em;
+  padding-top: 1em;
+  margin-top: 0;
+}
+
+.travelCardListContainer__headingLine {
+  color: white;
+}
