@@ -1,8 +1,8 @@
 export const TRANSPORTATION_TYPES = {
-  FLIGHT: "flight",
-  TRAIN: "train",
-  CAR: "car",
-  BUS: "bus",
+  FLIGHT: "Flight",
+  TRAIN: "Train",
+  CAR: "Car",
+  BUS: "Bus",
 };
 
 const TRANSPORTATION__ILLUSTRATIONS_BASE_URL = "/cardIllustrations";

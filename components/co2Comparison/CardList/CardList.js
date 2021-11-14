@@ -6,17 +6,17 @@ import CardItem from "../CardItem/CardItem";
 const CardList = () => {
   const cards = [
     {
-      type: "Airplane Travel",
+      type: "Flight",
       carbon_emission: 300,
       link: "https://www.google.com/",
     },
     {
-      type: "Train Travel",
+      type: "Train",
       carbon_emission: 80,
       link: "https://www.google.com/",
     },
     {
-      type: "Car Travel",
+      type: "Car",
       carbon_emission: 150,
       link: "https://www.google.com/",
     },
