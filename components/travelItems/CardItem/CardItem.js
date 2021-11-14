@@ -25,19 +25,22 @@ const CardItem = ({
   const price = 69;
 
   const toHoursMinutes = (date) => `${date.getHours()}:${date.getHours()}`;
-  console.log("startDate", startDate);
-  console.log("endDate", endDate);
 
   const photo_url = "/cardIllustrations/airport.svg";
   return (
     <a href={link} target="_blank" rel="noreferrer noopener">
       <div className={styles.CardItem__container}>
-        {toHoursMinutes(startDate)} - {toHoursMinutes(endDate)}
-        {"    "}
-        {duration} Hours
-        {"     "}
-        {price}€{"     "}
-        {carbon_emission} kg
+        <div className={styles.CardItem__containerRight}>
+          <h4 className={styles.CardItem__containerEmission}>
+            {carbon_emission}kg of CO2/{duration} hours
+          </h4>
+        </div>
+        <div className={styles.CardItem__time}>
+          {toHoursMinutes(startDate)} - {toHoursMinutes(endDate)}
+          {price}€{"     "}
+        </div>
+        <div className={styles.CardItem__time}>{duration} Hours</div>
+        <div className={styles.CardItem__time}>{price}€</div>
       </div>
     </a>
   );

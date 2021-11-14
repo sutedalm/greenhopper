@@ -11,10 +11,6 @@ const MainPage = () => {
   const [returnDate, setReturnDate] = useState(new Date());
   const [showTravelCardList, setShowTravelCardList] = useState(false);
 
-  console.log("in mainpage");
-  console.log("startDate", departDate);
-  console.log("endDate", returnDate);
-
   const onClick = () => {
     setShowTravelCardList(true);
   };
