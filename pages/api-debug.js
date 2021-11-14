@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <button onClick={async () => {
-          let cards = await api_call("from", "to");
+          let cards = await api_call("Paris", "Munich");
           console.log(cards);
       } }> Click Me! </button>
       <main className={styles.main}>Hello World</main>

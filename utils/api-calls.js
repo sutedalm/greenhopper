@@ -1,10 +1,20 @@
 // Makes api call to get recipe and shop list
 export async function api_call(from, to) {
+    console.log(from + " to " + to);
+    //First get distance
+    let from_dist_url = "https://nominatim.openstreetmap.org/search.php?q=" + from + "&format=jsonv2";
+    let to_dist_url = "https://nominatim.openstreetmap.org/search.php?q=" + to + "&format=jsonv2";
 
+    let from_dist = await get_dist(from_dist_url);
+    let to_dist = await get_dist(to_dist_url);
+    let dist = distance(from_dist[0], from_dist[1], to_dist[0], to_dist[1]);
+
+    console.log("Distance: ")
+    console.log(dist)
     // Car
     let car_card = await get_car_route(from, to);
-    // Bus
-    let bus_card = await get_bus_route(from, to);
+    //// Bus
+    //let bus_card = await get_bus_route(from, to);
     // Train
     let train_card = await get_train_route(from, to);
     // Flight
@@ -13,7 +23,6 @@ export async function api_call(from, to) {
     // We use string input in from and to
     let cards = [
         car_card,
-        bus_card,
         train_card,
         flight_card
     ]
@@ -25,31 +34,71 @@ export async function api_call(from, to) {
     return cards;
 }
 
+function distance(lat1, lon1, lat2, lon2) {
+    var unit = "K";
+	if ((lat1 == lat2) && (lon1 == lon2)) {
+		return 0;
+	}
+	else {
+		var radlat1 = Math.PI * lat1/180;
+		var radlat2 = Math.PI * lat2/180;
+		var theta = lon1-lon2;
+		var radtheta = Math.PI * theta/180;
+		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (dist > 1) {
+			dist = 1;
+		}
+		dist = Math.acos(dist);
+		dist = dist * 180/Math.PI;
+		dist = dist * 60 * 1.1515;
+		if (unit=="K") { dist = dist * 1.609344 }
+		if (unit=="N") { dist = dist * 0.8684 }
+		return dist;
+	}
+}
+
+async function get_dist(url) {
+     var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+    
+    let response = await fetch(url, requestOptions)
+      .then(response => response.json())
+      .catch(error => console.log('error', error));
+    console.log(response)
+    let ret_lat = response[0]["lat"]
+    let ret_long = response[0]["lon"]
+    return [ret_lat, ret_long];
+}
+
 async function get_car_route( from, to ) {
     return {
-            "type": "flight",
+            "type": "car",
             "carbon_emission": 5,
             "link": "https://www.google.com/",
         };
 }
 
-async function get_bus_route( from, to ) {
-    return {
-            "type": "flight",
-            "carbon_emission": 3,
-            "link": "https://www.google.com/",
-        };
-}
+//async function get_bus_route( from, to ) {
+//    return {
+//            "type": "bus",
+//            "carbon_emission": 3,
+//            "link": "https://www.google.com/",
+//        };
+//}
 
 async function get_train_route( from, to ) {
     return {
-            "type": "flight",
+            "type": "train",
             "carbon_emission": 9,
             "link": "https://www.google.com/",
         };
 }
 
 async function get_flight_route( from, to ) {
+    let cb_url = "https://co2.myclimate.org/en/flight_calculators";
+
     return {
             "type": "flight",
             "carbon_emission": 8,
