@@ -13,7 +13,9 @@ const MainPage = () => {
   const [showTravelCardList, setShowTravelCardList] = useState(false);
   const [cards, setCards] = useState([]);
 
-  const onClick = () => {
+  const onClick = async () => {
+    let ret_cards = await api_call(from, to);
+    setCards(ret_cards);
     setShowTravelCardList(true);
   };
 
