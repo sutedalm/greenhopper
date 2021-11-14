@@ -34,11 +34,18 @@ const CardItem = ({
             {carbon_emission}kg of CO2/{duration} hours
           </h4>
         </div>
-        <div className={styles.CardItem__time}>
-          {toHoursMinutes(startDate)} - {toHoursMinutes(endDate)}
+
+        <div className={styles.CardItem__textContainer}>
+          <span className={styles.CardItem__text}>
+            <img src="/clock.png" alt="Time:" width="15" height="15" />
+            {toHoursMinutes(startDate)} - {toHoursMinutes(endDate)}
+          </span>
+          <span className={styles.CardItem__text}>
+            <img src="/time-left.png" alt="Time:" width="15" height="15" />{" "}
+            {duration}h
+          </span>
+          <span className={styles.CardItem__text}>{price}€</span>
         </div>
-        <div className={styles.CardItem__time}>{duration} Hours</div>
-        <div className={styles.CardItem__time}>{price}€</div>
       </div>
     </a>
   );
