@@ -23,12 +23,13 @@ const TravelCardList = () => {
     },
   ];
   return (
-    <div>
-      <div className={styles.RecipeList__swiperContainer}>
+    <div className={styles.container}>
+      <div className={styles.fade}></div>
+      <div className={styles.co2CardListContainer}>
+        <CardList />
+      </div>
+      <div className={styles.travelCardListContainer}>
         <Swiper slidesPerView={"auto"} spaceBetween={3} direction="vertical">
-          <SwiperSlide>
-            <CardList />
-          </SwiperSlide>
           {cards.map(({ type, carbon_emission, link }) => (
             <SwiperSlide key={type} className={styles.swiperSlide}>
               <CardItem
