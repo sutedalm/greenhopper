@@ -12,7 +12,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainPage />
-      <CardList />
       <TravelCardList />
     </div>
   );
