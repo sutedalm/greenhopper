@@ -33,8 +33,13 @@ export async function api_call(from, to) {
     return cards;
 }
 
-function calc_duration(kmh, dist_km) {
-    return dist_km / kmh;
+function calc_duration(dist_km, kmh) {
+    let hours = dist_km / kmh;
+    console.log("kmh " + kmh);
+    console.log("dist_km " + dist_km);
+    console.log("hours " + hours);
+    let minutes = hours * 60;
+    return [(hours).toFixed(0), (minutes.toFixed(0) % 60)];
 }
 
 function distance(lat1, lon1, lat2, lon2) {
@@ -84,7 +89,8 @@ async function get_car_card( from, to, dist) {
             "type": TRANSPORTATION_TYPES.CAR,
             "carbon_emission": carbon_footprint.toFixed(2),
             "link": "https://www.blablacar.de/",
-            "duration": calc_duration(dist, 80.0), 
+            "hours": calc_duration(dist, 80.0)[0], 
+            "minutes": calc_duration(dist, 80.0)[1], 
             "distance": dist.toFixed(2),
         };
 }
@@ -99,7 +105,8 @@ async function get_train_card( from, to, dist) {
             "type": TRANSPORTATION_TYPES.TRAIN,
             "carbon_emission": carbon_footprint.toFixed(2),
             "link": "https://www.bahn.com/",
-            "duration": calc_duration(dist, 100.0), 
+            "hours": calc_duration(dist, 100.0)[0], 
+            "minutes": calc_duration(dist, 100.0)[1], 
             "distance": dist.toFixed(2),
         };
 }
@@ -111,7 +118,8 @@ async function get_flight_card( from, to, dist) {
             "type": TRANSPORTATION_TYPES.FLIGHT,
             "carbon_emission": carbon_footprint.toFixed(2),
             "link": "https://www.lufthansa.com/us/en/homepage",
-            "duration": calc_duration(dist, 804.5), 
+            "hours": calc_duration(dist, 804.5)[0], 
+            "minutes": calc_duration(dist, 804.5)[1], 
             "distance": dist.toFixed(2),
         };
 }
