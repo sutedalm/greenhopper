@@ -6,21 +6,28 @@ import CardItem from "../CardItem/CardItem";
 const CardList = () => {
   const cards = [
     {
-      type: "flight",
-      carbon_emission: "10",
+      type: "Airplane Travel",
+      carbon_emission: 300,
       link: "https://www.google.com/",
     },
     {
-      type: "train",
-      carbon_emission: 10,
+      type: "Train Travel",
+      carbon_emission: 80,
       link: "https://www.google.com/",
     },
     {
-      type: "car",
-      carbon_emission: 10,
+      type: "Car Travel",
+      carbon_emission: 150,
       link: "https://www.google.com/",
     },
   ];
+
+  const emissionToColor = (emission) => {
+    if (emission > 200) return "red";
+    else if (emission >= 100 && emission <= 200) return "orange";
+    return "green";
+  };
+
   return (
     <div>
       <div className={styles.RecipeList__swiperContainer}>
