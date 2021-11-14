@@ -94,11 +94,11 @@ async function get_train_card( from, to, dist) {
 }
 
 async function get_flight_card( from, to, dist) {
-    let cb_url = "https://co2.myclimate.org/en/flight_calculators";
+    let carbon_footprint = dist * 0.11; // This formula is far from accurate. Heave TODO
 
     return {
             "type": TRANSPORTATION_TYPES.FLIGHT,
             "carbon_emission": 8,
-            "link": "https://www.google.com/",
+            "link": "https://www.lufthansa.com/us/en/homepage",
         };
 }
