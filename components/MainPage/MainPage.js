@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchFieldForm from "../SearchFieldForm/SearchFieldForm";
 import TravelCardList from "/components/travelItems/TravelCardList/TravelCardList";
+import { api_call } from "../../utils/api-calls";
 
 import styles from "./MainPage.module.css";
 
@@ -10,8 +11,11 @@ const MainPage = () => {
   const [departDate, setDepartDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
   const [showTravelCardList, setShowTravelCardList] = useState(false);
+  const [cards, setCards] = useState([]);
 
-  const onClick = () => {
+  const onClick = async () => {
+    let ret_cards = await api_call(from, to);
+    setCards(ret_cards);
     setShowTravelCardList(true);
   };
 
@@ -29,7 +33,7 @@ const MainPage = () => {
         setTo={setTo}
         onClick={onClick}
       />
-      {showTravelCardList && <TravelCardList />}
+      {showTravelCardList && <TravelCardList co2_cards={cards} />}
     </div>
   );
 };

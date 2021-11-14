@@ -4,7 +4,7 @@ import styles from "./TravelCardList.module.css";
 
 import CardItem from "../CardItem/CardItem";
 import CardList from "../../co2Comparison/CardList/CardList";
-const TravelCardList = () => {
+const TravelCardList = ({co2_cards}) => {
   const cards = [
     {
       type: "flight",
@@ -26,7 +26,7 @@ const TravelCardList = () => {
     <div className={styles.container}>
       <div className={styles.fade}></div>
       <div className={styles.co2CardListContainer}>
-        <CardList />
+        <CardList co2_cards={co2_cards}/>
       </div>
       <div className={styles.travelCardListContainer}>
         <Swiper slidesPerView={"auto"} spaceBetween={3} direction="vertical">
