@@ -14,6 +14,9 @@ const MainPage = () => {
   const [cards, setCards] = useState([]);
 
   const onClick = async () => {
+    if(to == "" || from == ""){
+      return;
+    }
     let ret_cards = await api_call(from, to);
     setCards(ret_cards);
     setShowTravelCardList(true);
